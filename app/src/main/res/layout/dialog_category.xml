@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        android:id="@+id/category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_trans">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/category_list"
+            style="@style/div"
+            android:layout_margin="@dimen/margin_normal"
+            android:paddingBottom="@dimen/margin_mid"
+            android:paddingTop="@dimen/margin_mid"
+            android:background="@color/white"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</layout>

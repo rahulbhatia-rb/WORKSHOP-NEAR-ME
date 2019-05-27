@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="group"
+            type="com.supermeetup.supermeetup.model.Group"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/div"
+        android:layout_marginBottom="1dp"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/group_image"
+            android:layout_width="@dimen/icon_big"
+            android:layout_height="@dimen/icon_big"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="@dimen/margin_normal"/>
+
+        <TextView
+            android:id="@+id/group_name"
+            style="@style/div.h2"
+            android:layout_toRightOf="@id/group_image"
+            android:layout_alignParentTop="true"
+            android:lines="2"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:text="@{group.name}"/>
+
+        <TextView
+            style="@style/div.p"
+            android:layout_toRightOf="@id/group_image"
+            android:layout_below="@id/group_name"
+            android:layout_marginTop="@dimen/margin_mid"
+            android:text="@{@string/who(group.members, group.who)}"/>
+
+    </RelativeLayout>
+</layout>

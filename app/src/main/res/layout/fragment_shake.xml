@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_bar_height">
+
+        <RelativeLayout
+            style="@style/div"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_normal">
+            <ImageView
+                android:id="@+id/shake_profile_image"
+                android:layout_width="@dimen/icon_profile"
+                android:layout_height="@dimen/icon_profile"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginRight="@dimen/margin_normal"/>
+
+            <TextView
+                android:id="@+id/shake_profile_name"
+                style="@style/div.h1"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/shake_profile_image"/>
+
+            <TextView
+                android:id="@+id/shake_profile_location"
+                style="@style/div.p"
+                android:layout_toRightOf="@id/shake_profile_image"
+                android:layout_below="@id/shake_profile_name"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:textColor="@color/white"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/shake_profile_bio"
+                style="@style/div.p"
+                android:layout_toRightOf="@id/shake_profile_image"
+                android:layout_below="@id/shake_profile_location"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:textColor="@color/white"
+                android:text=""/>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shake_profile_list"
+            style="@style/div"/>
+    </LinearLayout>
+</layout>

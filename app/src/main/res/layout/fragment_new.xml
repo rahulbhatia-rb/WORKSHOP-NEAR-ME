@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        style="@style/div"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/new_console"
+            style="@style/div"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:paddingTop="0dp"
+            android:paddingBottom="@dimen/margin_normal">
+
+            <LinearLayout
+                android:id="@+id/new_console_status"
+                style="@style/div.hlist"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/margin_mid"
+                android:background="@color/colorPrimaryDark"
+                android:padding="@dimen/margin_small">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_small"
+                    android:layout_height="@dimen/icon_small"
+                    android:src="@mipmap/ic_wait"
+                    android:layout_marginRight="@dimen/margin_normal"/>
+
+                <TextView
+                    style="@style/div.p.small"
+                    android:layout_width="wrap_content"
+                    android:text="@string/waiting"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/new_console_image"
+                android:layout_width="@dimen/icon_big"
+                android:layout_height="@dimen/icon_big"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/new_console_status"
+                android:scaleType="center"
+                android:layout_margin="@dimen/margin_normal"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/new_console_title"
+                style="@style/div.h1"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/new_console_image"
+                android:layout_below="@id/new_console_status"
+                android:lines="2"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"/>
+
+            <TextView
+                android:id="@+id/new_console_content"
+                style="@style/div.p"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@id/new_console_image"
+                android:layout_below="@id/new_console_title"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_marginRight="@dimen/margin_normal"/>
+
+        </RelativeLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/new_map"
+            android:layout_below="@id/new_console"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/bottom_bar_height"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+
+</layout>

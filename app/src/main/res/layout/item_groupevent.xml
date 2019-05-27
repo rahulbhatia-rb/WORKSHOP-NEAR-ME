@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="event"
+            type="com.supermeetup.supermeetup.model.Event"/>
+    </data>
+
+    <LinearLayout
+        style="@style/div.vlist"
+        android:background="@color/white"
+        android:padding="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_mid">
+
+        <TextView
+            android:id="@+id/event_status"
+            style="@style/div.p.small"
+            android:gravity="center_vertical"
+            android:text="@{event.status.toUpperCase()}"/>
+
+        <TextView
+            android:id="@+id/event_name"
+            style="@style/div.h1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="@{event.name}"/>
+
+        <LinearLayout
+            style="@style/div.hlist"
+            android:layout_marginTop="@dimen/margin_mid">
+
+            <ImageView
+                android:layout_width="@dimen/icon_tiny"
+                android:layout_height="@dimen/icon_tiny"
+                android:src="@mipmap/ic_clock"
+                android:tint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/margin_mid"/>
+            <TextView
+                android:id="@+id/event_time"
+                style="@style/div.h2"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="@{event.getEventTime()}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/event_address_layout"
+            style="@style/div.hlist"
+            android:layout_marginTop="@dimen/margin_mid">
+
+            <ImageView
+                android:layout_width="@dimen/icon_tiny"
+                android:layout_height="@dimen/icon_tiny"
+                android:src="@mipmap/ic_location"
+                android:tint="@color/colorPrimary"
+                android:layout_marginRight="@dimen/margin_mid"/>
+            <TextView
+                android:id="@+id/event_address"
+                android:lines="1"
+                android:ellipsize="end"
+                android:gravity="top"
+                style="@style/div.p"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/event_photos"
+            style="@style/div"/>
+
+    </LinearLayout>
+
+</layout>

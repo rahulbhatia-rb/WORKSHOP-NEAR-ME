@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        style="@style/div.vlist">
+
+        <TextView
+            style="@style/div.divider"
+            android:layout_marginTop="@dimen/margin_normal"/>
+
+        <TextView
+            style="@style/div.h1"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:text="@string/interests"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/topiclist"
+            android:layout_margin="@dimen/margin_normal"
+            style="@style/div"/>
+
+    </LinearLayout>
+
+</layout>

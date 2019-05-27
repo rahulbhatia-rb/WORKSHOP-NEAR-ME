@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:paddingRight="@dimen/margin_normal"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_default"
+            android:theme="@style/actionbar"
+            app:theme="@style/actionbar"
+            android:iconifiedByDefault="false"
+            app:iconifiedByDefault="false"
+            android:queryHint="@string/search_hint"
+            app:queryHint="@string/search_hint"
+            app:searchHintIcon="@mipmap/ic_search"
+            app:searchIcon="@mipmap/ic_search"
+            app:closeIcon="@mipmap/ic_close"
+            app:queryBackground="@drawable/bg_searchview"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.supermeetup.supermeetup">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".MeetupApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1012beeb484a1c77da024d0facdd5d6d49a1e59a" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAYOnzaUL2s6Pmf2DLWo4qTt7a1X3A1k-k" />
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.login"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="@string/intent_scheme"
+                    android:host="@string/intent_host" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" ></activity>
+
+        <activity
+            android:name=".activities.RecommendEventsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" ></activity>
+
+        <activity
+            android:name=".activities.EventDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".activities.GroupActivity"
+            android:screenOrientation="portrait"></activity>
+
+    </application>
+
+</manifest>

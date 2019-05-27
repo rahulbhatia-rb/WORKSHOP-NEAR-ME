@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        style="@style/div.vlist"
+        android:layout_marginBottom="@dimen/bottom_bar_height">
+
+        <RelativeLayout
+            style="@style/div"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/icon_profile"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/logo"
+                android:tint="@color/white"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+        <include layout="@layout/layout_searchview"
+            android:id="@+id/nearby_searchlayout"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nearby_listview">
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

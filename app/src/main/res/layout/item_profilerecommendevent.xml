@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="event"
+            type="com.supermeetup.supermeetup.model.Event"/>
+    </data>
+
+    <LinearLayout
+        style="@style/div.vlist"
+        android:padding="@dimen/margin_normal">
+
+        <TextView
+            style="@style/div.h1"
+            android:text="@string/recommendevent"/>
+
+        <ImageView
+            android:id="@+id/shake_recommendevent_image"
+            style="@style/div"
+            android:layout_marginTop="@dimen/margin_mid"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/shake_recommendevent_name"
+            style="@style/div.h2"
+            android:layout_marginTop="@dimen/margin_mid"
+            android:text="@{event.name}"/>
+
+        <TextView
+            android:id="@+id/shake_recommendevent_group"
+            style="@style/div.p"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{event.group.name}"/>
+
+        <TextView
+            android:id="@+id/shake_recommendevent_time"
+            style="@style/div.p"
+            android:layout_marginTop="@dimen/margin_mid"
+            android:text="@{event.getEventTime()}"/>
+
+        <TextView
+            android:id="@+id/shake_recommendevent_des"
+            style="@style/div.p"
+            android:layout_marginTop="@dimen/margin_mid"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="@{event.plainTextNoImagesDescription}"/>
+
+    </LinearLayout>
+</layout>

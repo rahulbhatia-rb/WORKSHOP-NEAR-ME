@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="event"
+            type="com.supermeetup.supermeetup.model.Event"/>
+    </data>
+
+    <LinearLayout
+        style="@style/div.vlist">
+
+        <LinearLayout
+            style="@style/div.hlist"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_mid">
+
+            <ImageView
+                android:id="@+id/eventdetail_back"
+                android:layout_width="@dimen/icon_default"
+                android:layout_height="@dimen/icon_default"
+                android:src="@mipmap/ic_back"
+                android:tint="@color/white"
+                android:background="@drawable/bg_primaryclick"/>
+
+            <TextView
+                android:id="@+id/eventdetail_title"
+                style="@style/div.h1"
+                android:textColor="@color/white"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:gravity="center_vertical"
+                android:text="@{event.name}"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            style="@style/div"
+            android:layout_margin="@dimen/margin_normal">
+            <LinearLayout
+                style="@style/div.vlist" >
+
+                <RelativeLayout
+                    android:id="@+id/eventdetail_grouplayout"
+                    style="@style/div">
+                    <ImageView
+                        android:id="@+id/eventdetail_group_image"
+                        android:layout_width="@dimen/icon_default"
+                        android:layout_height="@dimen/icon_default"
+                        android:scaleType="centerCrop"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:src="@mipmap/ic_launcher_round"/>
+                    <ImageView
+                        android:id="@+id/eventdetail_group_more"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/margin_mid"
+                        android:src="@mipmap/ic_right"
+                        android:tint="@color/grey500" />
+                    <TextView
+                        android:id="@+id/eventdetail_group_name"
+                        style="@style/div.h2"
+                        android:layout_toRightOf="@id/eventdetail_group_image"
+                        android:layout_toLeftOf="@id/eventdetail_group_more"
+                        android:layout_alignParentTop="true"
+                        android:text="@{event.group.name}"/>
+                    <TextView
+                        android:id="@+id/eventdetail_group_location"
+                        style="@style/div.p"
+                        android:layout_marginTop="@dimen/margin_mid"
+                        android:layout_toRightOf="@id/eventdetail_group_image"
+                        android:layout_toLeftOf="@id/eventdetail_group_more"
+                        android:layout_below="@id/eventdetail_group_name"
+                        android:text="@{event.group.localizedLocation}"/>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/div.divider"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/margin_normal"/>
+
+                <TextView
+                    style="@style/div.h1"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:textSize="20sp"
+                    android:text="@{event.name}"/>
+
+                <RelativeLayout
+                    style="@style/div"
+                    android:layout_marginTop="@dimen/margin_normal">
+                    <ImageView
+                        android:id="@+id/eventdetail_time_icon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:src="@mipmap/ic_clock"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"/>
+                    <TextView
+                        style="@style/div.h2"
+                        android:layout_height="@dimen/icon_small"
+                        android:text="@{event.getEventTime()}"
+                        android:layout_toRightOf="@id/eventdetail_time_icon"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/div"
+                    android:layout_marginTop="@dimen/margin_normal">
+                    <ImageView
+                        android:id="@+id/eventdetail_address_icon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:src="@mipmap/ic_location"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"/>
+                    <TextView
+                        android:id="@+id/eventdetail_address_name"
+                        style="@style/div.h2"
+                        android:layout_height="@dimen/icon_small"
+                        android:text=""
+                        android:layout_toRightOf="@id/eventdetail_address_icon"
+                        android:layout_alignParentTop="true"/>
+                    <TextView
+                        android:id="@+id/eventdetail_address_location"
+                        style="@style/div.p"
+                        android:layout_marginTop="@dimen/margin_mid"
+                        android:layout_toRightOf="@id/eventdetail_address_icon"
+                        android:layout_below="@id/eventdetail_address_name"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/div"
+                    android:layout_marginTop="@dimen/margin_normal">
+                    <ImageView
+                        android:id="@+id/eventdetail_host_icon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:src="@mipmap/ic_host"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"/>
+                    <TextView
+                        android:id="@+id/eventdetail_host_name"
+                        style="@style/div.h2"
+                        android:layout_height="@dimen/icon_small"
+                        android:text=""
+                        android:layout_toRightOf="@id/eventdetail_host_icon"
+                        android:layout_alignParentTop="true"/>
+                    <TextView
+                        android:id="@+id/eventdetail_host_intro"
+                        style="@style/div.p"
+                        android:layout_marginTop="@dimen/margin_mid"
+                        android:layout_toRightOf="@id/eventdetail_host_icon"
+                        android:layout_below="@id/eventdetail_host_name"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/div"
+                    android:layout_marginTop="@dimen/margin_normal">
+                    <ImageView
+                        android:id="@+id/eventdetail_meeting_icon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:src="@mipmap/ic_meeting"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"/>
+                    <TextView
+                        style="@style/div.h2"
+                        android:layout_height="@dimen/icon_small"
+                        android:text="@{@string/attendance(event.yesRsvpCount, event.group.who)}"
+                        android:layout_toRightOf="@id/eventdetail_meeting_icon"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/div.p"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@{event.plainTextNoImagesDescription}"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

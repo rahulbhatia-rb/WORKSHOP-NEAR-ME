@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <LinearLayout
+        style="@style/div.vlist">
+
+        <RelativeLayout
+            style="@style/div"
+            android:layout_height="@dimen/action_bar_height"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/find_switchview"
+                android:layout_width="@dimen/icon_default"
+                android:layout_height="@dimen/icon_default"
+                android:src="@mipmap/ic_map"
+                android:tint="@color/white"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_primaryclick"/>
+
+            <LinearLayout
+                style="@style/div.vlist"
+                android:layout_toLeftOf="@id/find_switchview"
+                android:layout_centerInParent="true">
+                <include layout="@layout/layout_searchview"
+                    android:id="@+id/find_searchlayout" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/find_list"
+            style="@style/div">
+        </FrameLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/find_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

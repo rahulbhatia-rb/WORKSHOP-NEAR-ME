@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        style="@style/div.vlist">
+
+        <LinearLayout
+            style="@style/div.hlist"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_mid">
+
+            <ImageView
+                android:id="@+id/recommendevents_back"
+                android:layout_width="@dimen/icon_default"
+                android:layout_height="@dimen/icon_default"
+                android:src="@mipmap/ic_back"
+                android:tint="@color/white"
+                android:background="@drawable/bg_primaryclick"/>
+
+            <RelativeLayout
+                android:id="@+id/recommendevents_category"
+                style="@style/div"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_mid"
+                android:background="@drawable/bg_primaryclick" >
+
+                <ImageView
+                    android:id="@+id/recommendevents_category_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="@dimen/margin_mid"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/ic_round"/>
+
+                <ImageView
+                    android:id="@+id/recommendevents_category_down"
+                    android:layout_width="@dimen/icon_default"
+                    android:layout_height="@dimen/icon_default"
+                    android:src="@mipmap/ic_down"
+                    android:tint="@color/white"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/recommendevents_category_name"
+                    style="@style/div.h1"
+                    android:textColor="@color/white"
+                    android:layout_toRightOf="@id/recommendevents_category_icon"
+                    android:layout_toLeftOf="@id/recommendevents_category_down"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_mid"
+                    android:layout_marginRight="@dimen/margin_mid"
+                    android:gravity="left|center_vertical"
+                    android:text="title"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recommendevents_list"
+            style="@style/div"
+            android:clipToPadding="false">
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>

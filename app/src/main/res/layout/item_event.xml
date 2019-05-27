@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        style="@style/div"
+        android:layout_height="@dimen/event_height">
+
+        <ImageView
+            android:id="@+id/event_image"
+            style="@style/div"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"/>
+
+        <LinearLayout
+            style="@style/div.vlist"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="left|bottom"
+            android:background="@color/white_semi_cc">
+
+            <LinearLayout
+                style="@style/div.vlist"
+                android:paddingTop="@dimen/margin_mid"
+                android:paddingBottom="@dimen/margin_mid"
+                android:paddingLeft="@dimen/margin_normal"
+                android:paddingRight="@dimen/margin_normal"
+                android:background="@drawable/bg_groupimage"
+                android:gravity="left|bottom">
+
+                <TextView
+                    android:id="@+id/event_name"
+                    style="@style/div.h1"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:text="title"/>
+
+                <LinearLayout
+                    style="@style/div.hlist"
+                    android:layout_marginTop="@dimen/margin_mid">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_tiny"
+                        android:layout_height="@dimen/icon_tiny"
+                        android:src="@mipmap/ic_clock"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_mid"/>
+                    <TextView
+                        android:id="@+id/event_time"
+                        style="@style/div.h2"
+                        android:lines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/div.hlist"
+                    android:layout_marginTop="@dimen/margin_mid">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_tiny"
+                        android:layout_height="@dimen/icon_tiny"
+                        android:src="@mipmap/ic_group"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_mid"/>
+                    <TextView
+                        android:id="@+id/event_group"
+                        style="@style/div.h2"
+                        android:lines="1"
+                        android:ellipsize="end"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/event_address_layout"
+                    style="@style/div.hlist"
+                    android:layout_marginTop="@dimen/margin_mid">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_tiny"
+                        android:layout_height="@dimen/icon_tiny"
+                        android:src="@mipmap/ic_location"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginRight="@dimen/margin_mid"/>
+                    <TextView
+                        android:id="@+id/event_address"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:gravity="top"
+                        style="@style/div.p"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/event_divider"
+            style="@style/div.divider"
+            android:layout_alignParentTop="true"/>
+
+    </RelativeLayout>
+</layout>

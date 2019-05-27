@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <variable
+            name="group"
+            type="com.supermeetup.supermeetup.model.Group"/>
+    </data>
+
+    <LinearLayout
+        style="@style/div.vlist"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/div.hlist"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_mid">
+
+            <ImageView
+                android:id="@+id/groupdetail_back"
+                android:layout_width="@dimen/icon_default"
+                android:layout_height="@dimen/icon_default"
+                android:src="@mipmap/ic_back"
+                android:tint="@color/white"
+                android:background="@drawable/bg_primaryclick"/>
+
+            <TextView
+                android:id="@+id/groupdetail_title"
+                style="@style/div.h1"
+                android:textColor="@color/white"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:gravity="center_vertical"
+                android:text="@{group.name}"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/div"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:id="@+id/groupdetail_image"
+                style="@style/div"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                style="@style/div.vlist"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_normal"
+                android:background="@drawable/bg_groupimage"
+                android:gravity="bottom"
+                android:layout_centerInParent="true" >
+                <TextView
+                    style="@style/div.h1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{group.name}"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/groupdetail_members"
+                    style="@style/div"
+                    android:layout_marginTop="@dimen/margin_mid" />
+                <TextView
+                    android:id="@+id/groupdetail_who"
+                    style="@style/div.p"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_mid"
+                    android:text=""/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/div.h2"
+            android:padding="@dimen/margin_normal"
+            android:text="@string/meetups"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/groupdetail_events"
+            style="@style/div"/>
+
+    </LinearLayout>
+</layout>
